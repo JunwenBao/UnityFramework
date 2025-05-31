@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class State : IState
 {
-    protected StateController controller;
-    protected string animName;
+    private StateController controller;
+    private string animName;
 
     public State(StateController controller, string animName)
     {
@@ -11,18 +11,18 @@ public class State : IState
         this.animName = animName;
     }
 
-    public virtual void Enter()
+    public void Enter()
     {
         controller.PlayAnimation(animName);
     }
 
-    public virtual void Exit()
+    public void Exit()
     {
         controller.StopAnimation(animName);
     }
 
-    public virtual void Update()
+    public void Update()
     {
-        
+
     }
 }
